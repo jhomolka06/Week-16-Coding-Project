@@ -1,17 +1,18 @@
 h1 {
     text-align: center;
     font-size: 50px;
-    color: #000000;
-    font-family: 'Roboto', sans-serif;
+    color: #a43434;
+    font-style: italic;
+    font-outline: 20px solid #080808;
     margin-top: 50px;
     margin-bottom: 50px;
 }
 
 p {
     text-align: center;
-    font-size: 20px;
-    color: rgba(0, 159, 42, 0.58);
-    font-family: 'Roboto', sans-serif;
-    margin-top: 50px;
+    font-size: 30px;
+    color: rgba(242, 28, 4, 0.58);
+    font-family: 'dancing script', cursive;
+    margin-top: 10px;
     margin-bottom: 50px;
 }

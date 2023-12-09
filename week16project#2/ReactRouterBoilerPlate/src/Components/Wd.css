@@ -5,6 +5,7 @@ h2 {
     color: white;
     display: flex;
     justify-content: center;
+    background-color: #0a0909;
 }
 
 h3 {
@@ -12,10 +13,11 @@ h3 {
     display: flex;
     font-size: 2rem;
     padding: 1rem;
+    font-style: italic;
 }
 
 .wd {
-    color: white;
+    color: rgb(6, 5, 5);
     justify-content: center;
     padding: 1rem;
     font-size: 25px;

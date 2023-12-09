@@ -1,12 +1,11 @@
-.navbar {
-   background-color: #333;
+ .navbar {
+   background-color: #b72b2b;
    color: white;
    display: flex;
-   justify-content: left;
+   justify-content: center;
    align-items: center;
    gap: 2rem;
-   padding: 1rem;
- }
+   padding: 1rem;}
  
  .navbar-link {
    color: inherit;
@@ -22,5 +21,5 @@
  }
  
  .navbar-link:hover {
-   background-color: #555;
+   background-color: #847676;
  }
