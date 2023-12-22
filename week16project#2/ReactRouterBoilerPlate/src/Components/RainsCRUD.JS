@@ -53,6 +53,11 @@ export default function RainsCRUD() {
                 amount: newAmount,
             }),
         }).then(() => getRains());
+        // clear out the from data
+        setNewDate("");
+        setNewDay("");
+        setNewTime("");
+        setNewAmount("");
     }
 
     // Function to update rain data in the API
@@ -72,6 +77,11 @@ export default function RainsCRUD() {
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(updatedRainObject)
         }).then(() => getRains());
+
+       setNewDate("");
+        setNewDay("");
+        setNewTime("");
+        setNewAmount("");
     }
 
     function updateRainObject(field, value, rainObject) {
@@ -81,6 +91,8 @@ export default function RainsCRUD() {
         // }
         // return updatedRainObject;
         rainObject[field] = value;
+
+        
     }
 
     // Return the JSX to render
@@ -89,16 +101,16 @@ export default function RainsCRUD() {
         {/* Form to capture new rain data */}
             <form className="post">
                 <label>Date</label>
-                <input onChange={(e) => setNewDate(e.target.value)}></input>
+                <input value={newDate} onChange={(e) => setNewDate(e.target.value)}></input>
 
                 <label>Day</label>
-                <input onChange={(e) => setNewDay(e.target.value)}></input>
+                <input  value={newDay} onChange={(e) => setNewDay(e.target.value)}></input>
 
                 <label>Time</label>
-                <input onChange={(e) => setNewTime(e.target.value)}></input>
+                <input  value={newTime} onChange={(e) => setNewTime(e.target.value)}></input>
 
                 <label>Amount</label>
-                <input onChange={(e) => setNewAmount(e.target.value)}></input>
+                <input value={newAmount}  onChange={(e) => setNewAmount(e.target.value)}></input>
                 <button onClick={(e) => postNewRain(e)}>Submit</button>
             </form>
 
@@ -116,16 +128,17 @@ export default function RainsCRUD() {
                     <form className="update">
                         <h3>Update Rain Data</h3>
                         <label>Update Date</label>
-                        <input onChange={(e) => updateRainObject('date', e.target.value, rain)}></input><br></br>
+                        <input value={newDate} onChange={(e) => updateRainObject('date', e.target.value, rain)}></input><br></br>
 
                         <label>Update Day</label>
-                        <input onChange={(e) => updateRainObject('day', e.target.value, rain)}></input><br></br>
+                        <input value={newDay} onChange={(e) => updateRainObject('day', e.target.value, rain)}></input><br></br>
 
                         <label>Update Time</label>
-                        <input onChange={(e) => updateRainObject('time', e.target.value, rain)}></input><br></br>
+                        <input value={newTime} onChange={(e) => updateRainObject('time', e.target.value, rain)}></input><br></br>
 
                         <label>Update Amount</label>
-                        <input onChange={(e) => updateRainObject('amount', e.target.value, rain)}></input><br></br>
+                        <input value={newAmount} onChange={(e) => updateRainObject('amount', e.target.value, rain)}></input><br></br>
+
                         <button onClick={(e) => updateRains(e, rain)}>Update</button>
                     </form>
                 </div>

@@ -44,6 +44,10 @@ export default function WdsCRUD() {
                 pressure: newPressure,
             }),
         }).then(() => getWds());
+        // clear out the from data
+        setNewWind("");
+        setNewHumidity("");
+        setNewPressure("");
     }
 // Function to update weather data in the API
     function updateWds(e, wdObject) {
@@ -68,13 +72,13 @@ export default function WdsCRUD() {
             {/** Form for posting new weather data */}
             <form className="new-post">
             <label>Wind</label>
-            <input onChange={(e) => setNewWind(e.target.value)}></input>
+            <input value={newWind} onChange={(e) => setNewWind(e.target.value)}></input>
 
             <label>Humidity</label>
-            <input onChange={(e) => setNewHumidity(e.target.value)}></input>
+            <input value={newHumidity} onChange={(e) => setNewHumidity(e.target.value)}></input>
 
             <label>Pressure</label>
-            <input onChange={(e) => setNewPressure(e.target.value)}></input>
+            <input value={newPressure} onChange={(e) => setNewPressure(e.target.value)}></input>
             <button onClick={(e) => postNewWd(e)}>Submit</button>
 
             </form>
