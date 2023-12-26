@@ -64,7 +64,13 @@ export default function WdsCRUD() {
             method: "PUT",
             headers: {"Content-Type": "application/json",},
             body: JSON.stringify(updatedWdObject),
-        }).then(() => getWds());
+        }).then(() => {
+        getWds();
+        // clear out the from data
+        setUpdateWind("");
+        setUpdateHumidity("");
+        setUpdatePressure("");
+    })
     }
 // Return statement
     return (
@@ -96,13 +102,13 @@ export default function WdsCRUD() {
                     <form className="update">
                         <h3>Update Weather Data</h3>
                         <label>Update Wind</label>
-                        <input onChange={(e) => setUpdateWind(e.target.value)}></input>
+                        <input value={updateWind} onChange={(e) => setUpdateWind(e.target.value)}></input>
 
                         <label>Update Humidity</label>
-                        <input onChange={(e) => setUpdateHumidity(e.target.value)}></input>
+                        <input value={updateHumidity} onChange={(e) => setUpdateHumidity(e.target.value)}></input>
 
                         <label>Update Pressure</label>
-                        <input onChange={(e) => setUpdatePressure(e.target.value)}></input>
+                        <input value={updatePressure} onChange={(e) => setUpdatePressure(e.target.value)}></input>
                         <button onClick={(e) => updateWds(e, wd)}>Update</button>
                     </form>
                 </div>
